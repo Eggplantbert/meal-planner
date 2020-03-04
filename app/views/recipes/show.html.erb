@@ -12,3 +12,17 @@
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
+
+<section class="section ingredients">
+  <div class="container">
+    <h2 class="subtitle is-5">
+      <strong><%= @recipe.ingredients.count %></strong> Ingredients
+    </h2>
+    <%= render @recipe.ingredients %>
+    <div class="ingredient-form">
+      <hr />
+      <h3 class="subtitle is-3">Add an Ingredient</h3>
+      <%= render partial: 'ingredients/form', locals: { ingredient: @recipe.ingredients.build } %>
+    </div>
+  </div>
+</section>

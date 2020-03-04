@@ -1,0 +1,9 @@
+<p>
+  <strong><%= ingredient.name %>:</strong>
+  <%= ingredient.message %>
+  <br>
+  <%= link_to 'Delete', [ingredient],
+              method: :delete,
+              class: "button is-danger",
+              data: { confirm: 'Are you sure?' } %>
+</p>
