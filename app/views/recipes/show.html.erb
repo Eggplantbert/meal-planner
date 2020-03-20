@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Process:</strong>
+  <%= @recipe.process %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), :class => "btn btn-primary btn-sm" %> <%= link_to 'Back', recipes_path, :class => "btn btn-primary btn-sm" %>
+
+<section class="section ingredients">
+  <div class="container">
+    <h2 class="subtitle is-5">
+      <strong><%= @recipe.ingredients.count %></strong> Ingredients
+    </h2>
+    <%= render @recipe.ingredients %>
+    <div class="ingredient-form">
+      <hr />
+      <h3 class="subtitle is-3">Add an Ingredient</h3>
+      <%= render partial: 'ingredients/form', locals: { ingredient: @recipe.ingredients.build } %>
+    </div>
+  </div>
+</section>
